@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Questrial&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+}
+
+.container{
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center; 
+}
+
+#head{
+    background-color: rgb(4, 123, 227);
+    height: 200px;
+    text-align: center;
+}
+
+#head img{
+    height: 150px;
+    width: 450px;
+}
+
+
+.back {
+    background-color: rgb(4, 123, 227);
+    width: 120px;
+    text-align: center;
+    height: 35px;
+    margin: 30px;
+    border-radius: 40px;
+    border: none;
+}
+
+.back a {
+    color: white;   
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+
+
+#titulo{
+    margin-bottom: 20px;
+}
+#nombre{
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+#titulo-h{
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.abilities-list li{
+    list-style: none;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+
+}
+
+.texto {
+    float: left;
+    width: 80%;
+    padding-right: 20px; 
+}
+
+.cont-imagen {
+    float: right; 
+    width: 270px; 
+    height: 340px; 
+    background-image: url('/static/img/card.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+}
+
+.cont-imagen img {
+    width: 150px;
+    margin-top: 23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

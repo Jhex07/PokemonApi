@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Informacion pokemon</title>
+    <link rel="stylesheet" href="{% static "css/style2.css" %}">
+</head>
+<body>
+
+    <!--Header-->
+    <div id="head">
+        <img src="{% static "img/logo.png" %}">
+    </div>
+
+    <!--Boton para volver al inicio o lista de pokemones-->
+    <button class="back"><a href="{% url 'pokemon_lista' %}">Volver</a></button>
+
+    <div class="container">
+        <div class="texto">
+            <h1 id="titulo">Detalles del Pokémon</h1>
+             <!--Muestra el nombre accediendo a la propiedad name del diccionario-->
+            <h2 id="nombre">Nombre: {{ info.name }}</h2>
+            <h2 id="titulo-h">Habilidades:</h2>
+            <ul class="abilities-list"> <!--lista para mostrar las Habilidades-->
+                {% for ability in abilities %} <!--Se recorre la lista abilities-->
+                    <li>{{ ability }}</li> <!--Se muestra la habilidad iterada en el bucle-->
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="cont-imagen">
+            <img src="{{ image }}">
+        </div>
+    </div>
+    
+</body>
+</html>

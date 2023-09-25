@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Lista de Pokémon</title>
+</head>
+<body>
+
+    <!--Header-->
+    <div id="head">
+        <img src="{% static "img/logo.png" %}">
+    </div>
+
+    <!--Botones para ir al login, Registrarse o cerrar sesion-->
+    <div class="container-buttons">
+        <button class="login"><a href="{% url 'iniciar' %}">Login</a></button>
+        <button class="registrar"><a href="{% url 'registrar' %}">Registrarse</a></button>
+        <button class="cerrar"><a href="{% url 'cerrar' %}">Cerrar Sesion</a></button>
+    </div>
+
+    <div class="container">
+        {% for pokemon_name in pokemon_lista %} <!--Se usa un for para iterar en la lista de pokemones-->
+            <div class="caja">
+                <div class="contenido">
+                    <img src="{% static 'img/Pokeball.png' %}" class="pokemon_imagen"> <!--imagen de la pokebola-->
+                    <!--Se genera una url a la vista del la informacion del pokemon con la id del numero
+                    de la iteracion y el nombre del pokemon actual en el for-->
+                    <h2><a href="{% url 'pokemon_info' id=forloop.counter %}">{{ pokemon_name }}</a></h2>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static "css/style4.css" %}">
+</head>
+<body>
+    
+    <!--Header-->
+    <div id="head">
+        <img src="{% static "img/logo.png" %}">
+    </div>
+
+    <!--Boton para volver al inicio o lista de pokemones-->
+    <button class="back"><a href="{% url 'pokemon_lista' %}">Volver</a></button>
+
+    <!--Formulario de inicio de sesion-->
+    <h2>Iniciar Sesion</h2>
+    <div class="contenedor">
+        <form class="formulario" method="post" action="{% url 'iniciar' %}">
+            {% csrf_token %} <!--Token csrf para proteger formulario-->
+            <label for="email">Correo:</label>
+            <input type="email" name="email" required><br><br> <!--Campo de entrada del correo-->
+            <label for="contrasenia">Contraseña:</label>
+            <input type="password" name="contrasenia" required><br><br> <!--Campo de entrada de la contraseña-->
+            <input type="submit" value="Iniciar Sesión"> <!--Boton para iniciar sesion-->
+        </form>
+        
+    </div>
+
+    {% if msj_error %} <!--Verifica si hay un mesaje de error-->
+        <h3>{{msj_error}}</h3> <!--Se muestra el mensaje-->
+    {% endif %}
+    
+</body>
+<html>
