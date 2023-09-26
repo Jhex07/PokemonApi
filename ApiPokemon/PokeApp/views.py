@@ -69,7 +69,7 @@ def registar_usuario(request):
         email = request.POST['email']
         contrasenia = request.POST['contrasenia']
 
-        # Crea el usuario utilizando tu modelo personalizado CustomUser
+        # se crea el usuario utilizando el modelo personalizado 
         user = Usuario.objects.crear_usuario(email=email, password=contrasenia)
 
         # Redirige a la página de registro con un mensaje de usuario creado
